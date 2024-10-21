@@ -1,52 +1,45 @@
-#include <stdio.h>
-#define taillemax 9
-
-int taille;
-#include <stdio.h>
-#define taillemax 9
-
-int taille;
-int colonne = 0;
-int ligne = 0;
-int valeur = 0;
-int grille[taillemax][taillemax] = { 0 };
-int i;
-int j;
-
-void taillegrille() {
-    printf("Entrer la taille de votre grille : ");
-    scanf_s("%d", &taille);
-
-    if (taille > taillemax) {
-        printf("La taille de la grille est trop grande (max 9)\n");
-    }
-    else {
-
-        printf("Quelle valeure voulez vous entrer dans votre tableau: ");
-        scanf_s("%d", &valeur);
-        printf("A quelle ligne voulez vous assigner votre valeur : ");
-        scanf_s("%d", &ligne);
-        printf("A quelle colonne voulez vous assigner votre valeur : ");
-        scanf_s("%d", &colonne);
-
-        grille[i][j] = valeur;
-
-        for (int i = 0; i < taille; i++) {
-
-            printf("\n");
-
-            for (int j = 0; j < taille; j++) {
-                printf("| %d ", grille[i][j]);
-            }
-
-            printf("|");
+void InitGrille(int grille[9][9], int n) {
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            grille[i][j] = 0;
         }
-
+    }
+    for (int x = 0; x < n; x++)
+    {
+        for (int y = 0; y < n; y++)
+        {
+            printf("%d ", grille[x][y]);
+        }
+        printf("\n");
     }
 }
+int main()
+{
+	int grille_facile[9][9] = {
+		{6, 0, 4, 9, 0, 0, 3, 0, 8},
+		{3, 2, 0, 8, 0, 0, 4, 0, 0},
+		{0, 0, 0, 6, 0, 4, 5, 2, 1},
+		{1, 0, 2, 7, 4, 3, 8, 9, 6},
+		{8, 0, 0, 0, 0, 0, 0, 0, 0},
+		{9, 4, 7, 5, 8, 0, 0, 0, 0},
+		{4, 9, 0, 2, 0, 8, 6, 0, 3},
+		{0, 3, 6, 4, 0, 0, 0, 0, 0},
+		{0, 7, 0, 0, 6, 9, 0, 0, 4}
+	};
 
-int main() {
+	int grille_moyenne[9][9] = {
+		{1, 0, 0, 7, 0, 6, 0, 0, 0},
+		{0, 0, 0, 0, 0, 8, 5, 6, 0},
+		{6, 0, 8, 0, 5, 3, 4, 0, 1},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 6},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 3, 0, 0, 0, 0, 0, 0, 0},
+		{8, 4, 0, 3, 0, 1, 0, 5, 9}
+	};
 
-    taillegrille();
-    return 0;
+	return 0;
 }
