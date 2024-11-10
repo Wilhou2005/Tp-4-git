@@ -1,11 +1,13 @@
+// NOTE : 8/20
+
 #include <stdio.h>
-#define taillemax 9
+#define taillemax 9 // pas vu en cours, je ne voulais pas que vous utilisiez cela
 
 int taille;
 int colonne = 0;
 int ligne = 0;
 int valeur = 0;
-int grille[taillemax][taillemax] = { 0 };
+int grille[taillemax][taillemax] = { 0 }; // variables gloables à eviter, on passe les paramètres aux fonctions
 
 void InitGrille(int grille[taillemax][taillemax], int n) {
     for (int i = 0; i < n; i++) {
@@ -39,7 +41,7 @@ int VerifierContraintes(int grille[taillemax][taillemax], int n) {
 
     // Vérifier qu'un nombre n'est présent qu'une seule fois par ligne
     for (int i = 0; i < n; i++) {
-        int ligneCheck[taillemax] = { 0 };
+        int ligneCheck[taillemax] = { 0 }; 
         for (int j = 0; j < n; j++) {
             if (grille[i][j] != 0) {
                 if (ligneCheck[grille[i][j] - 1] == 1) {
